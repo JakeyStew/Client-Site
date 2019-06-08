@@ -2,29 +2,32 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
+    require "vendor/autoload.php";
+
     if(isset($_POST['submit'])) {
         require 'path/to/PHPMailer/src/Exception.php';
         require 'path/to/PHPMailer/src/PHPMailer.php';
         require 'path/to/PHPMailer/src/SMTP.php';
 
-        $mial = new PHPMailer;
+        $mail = new PHPMailer(true);
 
-        //Recipients
-        $mail->setFrom($_POST['email'], $_POST['name']);
-        $mail->addAddress('jakestewart95@outlook.com', 'Jake Stewart');     // Add email of company here
-        $mail->addReplyTo($_POST['email'], $_POST['name']);
+        try{
+            //Recipients
+            $mail->setFrom($_POST['email'], $_POST['name']);
+            $mail->addAddress('jakestewart95@outlook.com', 'Jake Stewart');     // Add email of company here
+            $mail->addReplyTo($_POST['email'], $_POST['name']);
 
-        $mail->isHTML(true);
-        $mail->Subject ='Form Submission: '.$_POST['subject'];
-        $mail->Body = '<h1 align=center>Name: '.$_POST['name'].'<br>Email: '.$_POST['email'].'<br>Message: '.$_POST['message'].'</h1>';
+            $mail->isHTML(true);
+            $mail->Subject ='Form Submission: '.$_POST['subject'];
+            $mail->Body = '<h1 align=center>Name: '.$_POST['name'].'<br>Email: '.$_POST['email'].'<br>Message: '.$_POST['message'].'</h1>';
 
-        if(!$mail->send())
-        {
-            $result="Something went wrong. Please try again.";
+            $mail->send();
+            echo 'Message has been sent';
+            header("Location: contact.html");
         }
-        else
+        catch (Exception $e)
         {
-            header("Location: contact.html?mailsent");
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
 ?>
