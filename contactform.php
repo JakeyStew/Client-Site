@@ -1,14 +1,30 @@
 <?php 
-if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $subject = $_POST['subject'];
-    $mailfrom = $_POST['email'];
-    $message = $_POST['message'];
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
 
-    $mailTo = "jakestewart95@outlook.com"; //Change to receiving email address
-    $headers = "From: ".$mailfrom;
-    $txt = "You have recieved an email from ".$name.".\n\n".$message;
+    if(isset($_POST['submit'])) {
+        require 'path/to/PHPMailer/src/Exception.php';
+        require 'path/to/PHPMailer/src/PHPMailer.php';
+        require 'path/to/PHPMailer/src/SMTP.php';
 
-    mail($mailTo, $subject, $txt, $headers);
-    header("Location: contact.html?mailsent");
-}
+        $mial = new PHPMailer;
+
+        //Recipients
+        $mail->setFrom($_POST['email'], $_POST['name']);
+        $mail->addAddress('jakestewart95@outlook.com', 'Jake Stewart');     // Add email of company here
+        $mail->addReplyTo($_POST['email'], $_POST['name']);
+
+        $mail->isHTML(true);
+        $mail->Subject ='Form Submission: '.$_POST['subject'];
+        $mail->Body = '<h1 align=center>Name: '.$_POST['name'].'<br>Email: '.$_POST['email'].'<br>Message: '.$_POST['message'].'</h1>';
+
+        if(!$mail->send())
+        {
+            $result="Something went wrong. Please try again.";
+        }
+        else
+        {
+            header("Location: contact.html?mailsent");
+        }
+    }
+?>
