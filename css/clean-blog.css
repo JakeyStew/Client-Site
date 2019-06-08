@@ -1,10 +1,7 @@
-@import url(//db.onlinewebfonts.com/c/3f3f1a887702b525cda01f7cd776b241?family=Gadugi);
-
 body {
   font-size: 20px;
   color: #212529;
-  font-family: 'Gadugi';
- }
+  font-family: 'Lora', 'Times New Roman', serif; }
 
 p {
   line-height: 1.5;
@@ -26,11 +23,13 @@ a {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
-  transition: all 0.2s; 
-}
-a:focus, a:hover {
-  color: #008dc8; 
-}
+  transition: all 0.2s; }
+  a:focus, a:hover {
+    color: #0085A1; }
+
+blockquote {
+  font-style: italic;
+  color: #868e96; }
 
 .section-heading {
   font-size: 36px;
@@ -49,12 +48,12 @@ a:focus, a:hover {
 
 ::-moz-selection {
   color: #fff;
-  background: #008dc8;
+  background: #0085A1;
   text-shadow: none; }
 
 ::selection {
   color: #fff;
-  background: #008dc8;
+  background: #0085A1;
   text-shadow: none; }
 
 img::-moz-selection {
@@ -130,11 +129,11 @@ img::-moz-selection {
         #mainNav.is-fixed .navbar-brand {
           color: #212529; }
           #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
-            color: #008dc8; }
+            color: #0085A1; }
         #mainNav.is-fixed .navbar-nav > li.nav-item > a {
           color: #212529; }
           #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-            color: #008dc8; }
+            color: #0085A1; }
       #mainNav.is-visible {
         /* if the user changes the scrolling direction, we show the header */
         -webkit-transform: translate3d(0, 100%, 0);
@@ -148,7 +147,6 @@ header.masthead {
   background: no-repeat center center;
   background-color: #868e96;
   background-attachment: scroll;
-  /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);*/
   position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -219,7 +217,7 @@ header.masthead {
   color: #212529; }
   .post-preview > a:focus, .post-preview > a:hover {
     text-decoration: none;
-    color: #008dc8; }
+    color: #0085A1; }
   .post-preview > a > .post-title {
     font-size: 30px;
     margin-top: 30px;
@@ -238,7 +236,7 @@ header.masthead {
     color: #212529; }
     .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
       text-decoration: underline;
-      color: #008dc8; }
+      color: #0085A1; }
 
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
@@ -297,55 +295,32 @@ form .form-group:first-child .floating-label-form-group {
   border-top: 1px solid #dee2e6; }
 
 footer {
-  padding: 25px 0 40px; 
-}
-footer .list-inline {
+  padding: 25px 0 40px; }
+  footer .list-inline {
     margin: 0;
-    padding: 0; 
-  }
-footer .copyright {
+    padding: 0; }
+  footer .copyright {
     font-size: 14px;
     margin-bottom: 0;
-    text-align: center; 
-  }
-/*------------TEST--------------------*/
-.card-header {
-  background-color: transparent;
-}
+    text-align: center; }
 
-.nav-tabs {
-  border: 0;
-  padding: 0.5rem 9rem;
-}
+.btn {
+  font-size: 14px;
+  font-weight: 800;
+  padding: 15px 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
-.nav-tabs>.nav-item>.nav-link {
-  color: #000;
-  margin: 0;
-  margin-right: 20px;
-  background-color: transparent;
-  border-radius: 10px;
-  padding: 11px 23px;
-  line-height: 1.5;
-}
+.btn-primary {
+  background-color: #0085A1;
+  border-color: #0085A1; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #fff;
+    background-color: #00657b !important;
+    border-color: #00657b !important; }
 
-.nav-tabs>.nav-item>.nav-link:hover {
-  background-color: transparent;
-  border: 1px solid #008dc8;
-  color: #008dc8;
-}
-
-.nav-tabs>.nav-item>.nav-link.active {
-  border: 1px solid #008dc8;
-  border-radius: 10px;
-}
-
-.card .card-header:not([data-background-color]) {
-  background-color: transparent;
-}
-
-/* Methods */
-.bg-change {
-  background-color: #212529;
-  color: #fff;
-  padding-top: 3.5rem;
-}
+.btn-lg {
+  font-size: 16px;
+  padding: 25px 35px; }
