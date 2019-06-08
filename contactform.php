@@ -5,25 +5,24 @@
     require "vendor/autoload.php";
 
     if(isset($_POST['submit'])) {
-        require 'path/to/PHPMailer/src/Exception.php';
-        require 'path/to/PHPMailer/src/PHPMailer.php';
-        require 'path/to/PHPMailer/src/SMTP.php';
+        require 'vendor/phpmailer/phpmailer/src/Exception.php';
+        require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+        require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
         $mail = new PHPMailer(true);
 
         try{
             //Recipients
             $mail->setFrom($_POST['email'], $_POST['name']);
-            $mail->addAddress('jakestewart95@outlook.com', 'Jake Stewart');     // Add email of company here
+            $mail->addAddress('jakestewart95@outlook.com', 'FindFix');     // Add email of company here
             $mail->addReplyTo($_POST['email'], $_POST['name']);
 
             $mail->isHTML(true);
-            $mail->Subject ='Form Submission: '.$_POST['subject'];
-            $mail->Body = '<h1 align=center>Name: '.$_POST['name'].'<br>Email: '.$_POST['email'].'<br>Message: '.$_POST['message'].'</h1>';
+            $mail->Subject ='Customer Query: '.$_POST['subject'];
+            $mail->Body = '<h3>Customer: </h3>'.$_POST['name'].'<br><h3>Email: </h3>'.$_POST['email'].'<br><h3>Message: </h3>'.$_POST['message'];
 
             $mail->send();
-            echo 'Message has been sent';
-            header("Location: contact.html");
+            header("Location: https://www.jakestewart.uk/contact.html"); //Change to redirect
         }
         catch (Exception $e)
         {
