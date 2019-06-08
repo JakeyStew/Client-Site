@@ -330,17 +330,13 @@ footer {
   background-color: transparent;
 }
 
-@media only screen and (min-width: 800px)
+@media only screen and (min-width: 800px) 
 {
   .nav-tabs {
-    border: 0;
-    padding: 0.5rem 9rem;
+   border: 0;
+   padding: 0.5rem 9rem;
   }
 }
-/*.nav-tabs {
-  border: 0;
-  padding: 0.5rem 9rem;
-}*/
 
 .nav-tabs>.nav-item>.nav-link {
   color: #000;
@@ -375,7 +371,6 @@ footer {
 }
 
 .pic-change {
-  color: #fff;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
