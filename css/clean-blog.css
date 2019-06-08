@@ -324,3 +324,51 @@ footer {
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px; }
+
+  /*------------TEST--------------------*/
+.card-header {
+  background-color: transparent;
+}
+
+.nav-tabs {
+  border: 0;
+  padding: 0.5rem 9rem;
+}
+
+.nav-tabs>.nav-item>.nav-link {
+  color: #000;
+  margin: 0;
+  margin-right: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 11px 23px;
+  line-height: 1.5;
+}
+
+.nav-tabs>.nav-item>.nav-link:hover {
+  background-color: transparent;
+  border: 1px solid #008dc8;
+  color: #008dc8;
+}
+
+.nav-tabs>.nav-item>.nav-link.active {
+  border: 1px solid #008dc8;
+  border-radius: 10px;
+}
+
+.card .card-header:not([data-background-color]) {
+  background-color: transparent;
+}
+
+/* Methods */
+.bg-change {
+  background-color: #212529;
+  color: #fff;
+  padding-top: 3.5rem;
+}
+
+.pic-change {
+  color: #fff;
+  padding-left: 0;
+  padding-right: 0;
+}
